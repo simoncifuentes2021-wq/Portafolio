@@ -1,0 +1,9 @@
+<svg width="1200" height="750" viewBox="0 0 1200 750" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="750" fill="#020617"/>
+  <rect width="1200" height="750" fill="url(#g)"/>
+  <path d="M0 90H1200M0 180H1200M0 270H1200M0 360H1200M0 450H1200M0 540H1200M0 630H1200M120 0V750M240 0V750M360 0V750M480 0V750M600 0V750M720 0V750M840 0V750M960 0V750M1080 0V750" stroke="white" stroke-opacity=".08"/>
+  <rect x="90" y="90" width="1020" height="570" rx="28" fill="#020617" fill-opacity=".68" stroke="white" stroke-opacity=".16"/>
+  <text x="130" y="335" fill="white" font-family="Segoe UI, Arial, sans-serif" font-size="58" font-weight="700">Sitio Profesional</text>
+  <text x="134" y="400" fill="#cbd5e1" font-family="Segoe UI, Arial, sans-serif" font-size="30">Landing page moderna para negocios</text>
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1200" y2="750"><stop stop-color="#111827"/><stop offset="1" stop-color="#4f46e5"/></linearGradient></defs>
+</svg>

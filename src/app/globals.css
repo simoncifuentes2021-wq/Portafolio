@@ -1,0 +1,183 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #0a0a0a;
+  --surface: #131313;
+  --line: rgba(255, 255, 255, 0.1);
+  --line-strong: rgba(255, 255, 255, 0.22);
+  --ink: #edeae3;
+  --ink-strong: #ffffff;
+  --muted: #8f8f8a;
+  --accent: #d8ff3e;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Estados táctiles: feedback sin flash naranja del navegador */
+@media (hover: none) {
+  .btn:active {
+    opacity: 0.85;
+  }
+
+  a:active {
+    opacity: 0.8;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(1100px 520px at 50% -12%, #131313 0%, #0a0a0a 55%) fixed,
+    #0a0a0a;
+  color: var(--ink);
+  font-family: var(--font-sans), ui-sans-serif, system-ui, -apple-system, sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--accent);
+  color: #0a0a0a;
+}
+
+:focus-visible {
+  outline: 1px solid var(--accent);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ---------- utilidades de sección ---------- */
+
+.section-shell {
+  @apply container relative py-16 sm:py-24;
+}
+
+/* Respeta el notch / home-indicator en móviles con pantalla completa */
+@media (max-width: 640px) {
+  .section-shell {
+    padding-left: max(1.5rem, env(safe-area-inset-left));
+    padding-right: max(1.5rem, env(safe-area-inset-right));
+  }
+}
+
+.section-index {
+  @apply mb-4 flex items-center gap-3 font-mono text-[11px] font-medium uppercase tracking-[0.24em] text-muted;
+}
+
+.section-title {
+  @apply max-w-3xl font-display text-[clamp(1.75rem,4vw,3rem)] font-medium leading-[1.08] tracking-[-0.02em] text-ink-strong;
+}
+
+.section-copy {
+  @apply mt-5 max-w-[62ch] font-sans text-base font-normal leading-[1.75] text-ink;
+}
+
+/* ---------- etiquetas y listas ---------- */
+
+.label-mono {
+  @apply font-mono text-[11px] font-medium uppercase tracking-[0.24em] text-muted;
+}
+
+.hairline {
+  @apply h-px w-full bg-line;
+}
+
+.spec-row {
+  @apply grid grid-cols-1 items-baseline gap-1 border-b border-line py-3 last:border-b-0 sm:grid-cols-[11rem_1fr] sm:gap-6;
+}
+
+.spec-row dt {
+  @apply font-mono text-[11px] font-medium uppercase tracking-[0.2em] text-muted;
+}
+
+.spec-row dd {
+  @apply font-mono text-sm text-ink;
+}
+
+/* ---------- botones ---------- */
+
+.btn {
+  @apply inline-flex min-h-10 items-center justify-center gap-2 rounded-none border px-5 py-2 font-mono text-[13px] font-medium uppercase tracking-[0.14em] transition-colors duration-200;
+}
+
+.btn-primary {
+  @apply border-accent bg-accent text-black hover:bg-black hover:text-accent;
+}
+
+.btn-secondary {
+  @apply border-line bg-transparent text-ink hover:border-accent hover:text-accent;
+}
+
+.btn-arrow {
+  @apply inline-block transition-transform duration-200 group-hover:translate-x-1;
+}
+
+/* ---------- animaciones del wireframe SVG ---------- */
+
+@keyframes draw {
+  from {
+    stroke-dashoffset: var(--dash, 600);
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes wireframe-pulse {
+  0%,
+  100% {
+    opacity: 0.35;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.wireframe-pulse {
+  animation: wireframe-pulse 3.2s ease-in-out infinite;
+}
+
+.wireframe-draw line,
+.wireframe-draw path,
+.wireframe-draw ellipse {
+  stroke-dasharray: var(--dash, 600);
+  animation: draw 1.2s ease-out forwards;
+}
+
+.wireframe-ring {
+  animation: spin-slow 14s linear infinite;
+  transform-origin: center;
+  transform-box: fill-box;
+}
