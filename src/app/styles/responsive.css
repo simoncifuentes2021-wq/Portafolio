@@ -1,0 +1,785 @@
+@media (min-width: 1600px) {
+  .hero-layout {
+    min-height: 680px;
+  }
+  .hero-title {
+    font-size: 100px;
+  }
+  .architecture-stage {
+    height: 405px;
+  }
+  .architecture-object {
+    top: 88px;
+    transform: perspective(1000px) rotateX(52deg) rotateZ(-32deg) scale(1.13);
+  }
+}
+@media (min-width: 1101px) {
+  .architecture-stage {
+    height: clamp(370px, 28vw, 430px);
+  }
+  .architecture-object {
+    top: clamp(72px, 5vw, 98px);
+    transform: perspective(1000px) rotateX(52deg) rotateZ(-32deg)
+      scale(clamp(1, 1.04 + 0.45vw, 1.13));
+  }
+}
+@media (max-width: 1100px) {
+  .container,
+  .section-shell {
+    width: calc(100% - 72px);
+  }
+  .nav-links {
+    gap: 15px;
+  }
+  .nav-contact {
+    display: none;
+  }
+  .hero-layout {
+    gap: 22px;
+    min-height: 570px;
+  }
+  .hero-title {
+    font-size: 6.5vw;
+  }
+  .hero-kicker {
+    font-size: 8px;
+    letter-spacing: 0.04em;
+  }
+  .hero-description {
+    font-size: 13px;
+  }
+  .architecture-stage {
+    height: 330px;
+  }
+  .architecture-object {
+    transform: perspective(1000px) rotateX(52deg) rotateZ(-32deg) scale(0.85);
+  }
+  .hero-actions {
+    gap: 22px;
+  }
+  .hero-actions .btn {
+    gap: 17px;
+    padding-inline: 18px;
+  }
+  .hero-stack > span:last-child {
+    gap: 10px;
+    font-size: 10px;
+  }
+  .project-case,
+  .project-case-business,
+  .project-case-dashboard {
+    gap: 34px;
+  }
+  .project-art {
+    padding-inline: 25px;
+    aspect-ratio: 1.1;
+    display: flex;
+    align-items: center;
+  }
+  .project-art-business {
+    padding-right: 65px;
+    padding-left: 18px;
+  }
+  .project-art-dashboard {
+    padding-inline: 17px;
+  }
+  .sports-content {
+    min-height: 177px;
+    padding-inline: 16px;
+  }
+  .court-scene {
+    height: 125px;
+  }
+  .screen-nav {
+    padding-inline: 14px;
+  }
+  .project-case-business .project-info {
+    padding-left: 0;
+  }
+  .project-info h3 {
+    font-size: 31px;
+  }
+  .project-summary {
+    font-size: 14px;
+  }
+  .project-excerpt {
+    font-size: 11px;
+  }
+  .floating-ticket {
+    right: 9px;
+    bottom: 32px;
+    transform: rotate(3deg) scale(0.85);
+    transform-origin: right;
+  }
+  .business-body {
+    padding-inline: 16px;
+  }
+  .business-sculpture {
+    transform: rotate(-16deg) scale(0.73);
+    right: -15px;
+    top: 58px;
+  }
+  .mobile-mockup {
+    right: 8px;
+    bottom: 40px;
+    transform: rotate(8deg) scale(0.85);
+    transform-origin: right bottom;
+  }
+  .dashboard-screen aside {
+    width: 68px;
+    padding-inline: 6px;
+  }
+  .dashboard-content {
+    padding-inline: 10px;
+  }
+  .chart-bars {
+    gap: 5px;
+  }
+  .dashboard-metrics > div {
+    padding: 6px;
+  }
+  .about-layout {
+    gap: 45px;
+  }
+  .stack-layout {
+    gap: 42px;
+  }
+  .stack-context {
+    padding: 23px;
+  }
+  .services-layout {
+    gap: 45px;
+  }
+  .contact-layout {
+    gap: 50px;
+  }
+  .detail-preview .project-art {
+    padding-inline: 90px;
+  }
+}
+@media (max-width: 767px) {
+  html {
+    scroll-padding-top: 85px;
+  }
+  .container,
+  .section-shell {
+    width: calc(100% - 44px);
+  }
+  .section-shell {
+    padding-block: 72px;
+  }
+  .navbar {
+    height: 74px;
+  }
+  .brand-name {
+    font-size: 12px;
+  }
+  .brand-name small {
+    font-size: 8px;
+  }
+  .nav-links {
+    display: none;
+  }
+  .menu-toggle {
+    display: flex;
+  }
+  .section-indicator {
+    display: none;
+  }
+  .hero {
+    padding-top: 100px;
+  }
+  .hero-topline .eyebrow {
+    font-size: 7px;
+    gap: 7px;
+    letter-spacing: 0.05em;
+  }
+  .hero-location {
+    display: none !important;
+  }
+  .hero-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 42px;
+    padding-block: 37px 25px;
+  }
+  .hero-title {
+    font-size: clamp(45px, 11.6vw, 82px);
+    line-height: 1.04;
+    letter-spacing: -0.06em;
+  }
+  .hero-kicker {
+    font-size: 8px;
+    margin-bottom: 20px;
+  }
+  .hero-description {
+    font-size: 13px;
+    margin-top: 22px;
+    max-width: 370px;
+  }
+  .desktop-break {
+    display: none;
+  }
+  .hero-actions {
+    gap: 26px;
+  }
+  .hero-actions .btn {
+    font-size: 12px;
+    gap: 18px;
+    padding-inline: 18px;
+    min-height: 50px;
+  }
+  .hero-actions .text-link {
+    font-size: 12px;
+    gap: 15px;
+  }
+  .architecture {
+    max-width: 490px;
+    align-self: center;
+  }
+  .architecture-stage {
+    height: 307px;
+  }
+  .architecture-object {
+    top: 42px;
+    transform: perspective(1000px) rotateX(52deg) rotateZ(-32deg) scale(0.86);
+  }
+  .architecture-meta .eyebrow {
+    font-size: 7px;
+  }
+  .architecture-coordinate {
+    bottom: 16px;
+    font-size: 6px;
+  }
+  .architecture-axis {
+    bottom: 37px;
+    left: 17px;
+  }
+  .layer-buttons {
+    gap: 3px;
+  }
+  .layer-buttons button {
+    font-size: 11px;
+    min-height: 44px;
+    padding: 9px 10px;
+  }
+  .layer-description {
+    min-height: 73px;
+  }
+  .hero-bottom {
+    padding-block: 20px;
+    min-height: 85px;
+  }
+  .hero-bottom .scroll-cue {
+    font-size: 9px;
+    gap: 10px;
+  }
+  .hero-stack {
+    gap: 6px;
+    align-items: flex-end;
+  }
+  .hero-stack .eyebrow {
+    font-size: 6px;
+  }
+  .hero-stack > span:last-child {
+    flex-wrap: wrap;
+    max-width: 155px;
+    justify-content: flex-end;
+    font-size: 9px;
+    line-height: 1.7;
+    gap: 3px 8px;
+  }
+  .hero-edition {
+    display: none;
+  }
+  .section-index {
+    font-size: 9px;
+    gap: 12px;
+    margin-bottom: 19px;
+  }
+  .section-header {
+    margin-bottom: 33px;
+  }
+  .section-heading-row {
+    display: block;
+  }
+  .section-title {
+    font-size: clamp(34px, 8.5vw, 54px);
+    max-width: 550px;
+  }
+  .section-aside {
+    margin-top: 18px;
+    font-size: 12px;
+    max-width: 290px;
+  }
+  .project-list {
+    gap: 55px;
+  }
+  .project-case,
+  .project-case-business,
+  .project-case-dashboard {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 24px;
+  }
+  .project-case-business .project-visual-wrap {
+    order: 0;
+  }
+  .project-art {
+    aspect-ratio: 1.16;
+    padding: 42px 29px;
+  }
+  .project-art-business {
+    padding: 42px 74px 45px 24px;
+  }
+  .project-art-dashboard {
+    padding: 39px 22px;
+    aspect-ratio: 1.16;
+  }
+  .browser-chrome {
+    height: 22px;
+  }
+  .sports-content {
+    min-height: 188px;
+  }
+  .sports-content h4 {
+    font-size: 28px;
+  }
+  .court-scene {
+    height: 131px;
+    top: 40px;
+    right: 2px;
+  }
+  .business-body h4 {
+    font-size: 27px;
+  }
+  .project-info {
+    padding: 0;
+  }
+  .project-type {
+    font-size: 8px;
+  }
+  .project-info h3 {
+    font-size: 31px;
+    margin-top: 12px;
+  }
+  .project-summary {
+    max-width: none;
+    margin-top: 12px;
+    font-size: 15px;
+  }
+  .project-excerpt {
+    font-size: 12px;
+    max-width: none;
+    margin-top: 10px;
+  }
+  .tech-tags {
+    margin-top: 18px;
+  }
+  .project-case-link {
+    margin-top: 16px;
+  }
+  .mockup-caption {
+    font-size: 6px;
+    left: 17px;
+    bottom: 17px;
+  }
+  .floating-ticket {
+    bottom: 30px;
+  }
+  .project-open {
+    height: 33px;
+    width: 33px;
+    top: 12px;
+    right: 12px;
+  }
+  .projects-footnote {
+    margin-top: 38px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .projects-footnote .eyebrow {
+    font-size: 8px;
+  }
+  .about-section {
+    padding-block: 69px 55px;
+  }
+  .about-layout {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .about-heading h2 {
+    font-size: clamp(35px, 9vw, 60px);
+  }
+  .about-signature {
+    margin-top: 24px;
+  }
+  .about-copy {
+    padding-top: 0;
+  }
+  .about-copy .about-lead {
+    font-size: 21px;
+  }
+  .about-copy p {
+    font-size: 13px;
+  }
+  .process-explorer {
+    padding-top: 21px;
+  }
+  .process-top > span {
+    font-size: 7px;
+  }
+  .process-steps {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px 17px;
+    margin-top: 17px;
+  }
+  .process-steps button {
+    font-size: 12px;
+    min-height: 54px;
+  }
+  .process-detail {
+    gap: 17px;
+    min-height: 176px;
+    margin-top: 20px;
+  }
+  .process-graphic {
+    width: 68px;
+    height: 94px;
+    transform: scale(0.7);
+  }
+  .process-detail h3 {
+    font-size: 16px;
+    line-height: 1.3;
+  }
+  .process-detail p {
+    font-size: 11px;
+  }
+  .process-code {
+    font-size: 7px;
+    line-height: 1.7;
+  }
+  .stack-layout {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .stack-group {
+    margin-bottom: 22px;
+  }
+  .stack-group > div {
+    gap: 4px 12px;
+  }
+  .stack-group button {
+    font-size: 13px;
+    min-height: 44px;
+  }
+  .stack-context {
+    min-height: 350px;
+  }
+  .stack-selected-name {
+    font-size: 40px;
+    margin-top: 25px;
+  }
+  .stack-context > p {
+    min-height: 44px;
+  }
+  .stack-related {
+    min-height: 100px;
+  }
+  .services-section {
+    padding-top: 0;
+  }
+  .services-layout {
+    display: block;
+    padding-top: 58px;
+  }
+  .services-heading {
+    position: static;
+    margin-bottom: 35px;
+  }
+  .services-heading h2 {
+    font-size: 38px;
+  }
+  .services-heading > p:last-child {
+    margin-top: 17px;
+    max-width: none;
+  }
+  .service-item h3 {
+    font-size: 17px;
+  }
+  .service-item summary {
+    padding-block: 21px;
+  }
+  .service-item > div {
+    padding-left: 27px;
+  }
+  .contact-section {
+    padding-top: 59px;
+  }
+  .contact-heading {
+    margin-bottom: 34px;
+    gap: 10px;
+  }
+  .contact-heading h2,
+  .contact-heading h1 {
+    font-size: clamp(39px, 9.9vw, 65px);
+  }
+  .contact-orbit-link {
+    width: 54px;
+    height: 54px;
+  }
+  .contact-orbit-link svg {
+    width: 27px;
+    height: 27px;
+  }
+  .contact-layout {
+    display: block;
+  }
+  .contact-copy > p {
+    font-size: 13px;
+    max-width: none;
+  }
+  .contact-email {
+    font-size: 13px;
+    gap: 9px;
+  }
+  .contact-socials {
+    gap: 19px;
+    margin-top: 13px;
+  }
+  .contact-note {
+    margin-top: 20px;
+  }
+  .contact-form {
+    margin-top: 38px;
+    gap: 22px;
+  }
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 16px;
+  }
+  .form-row {
+    gap: 16px;
+  }
+  .footer-top {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 10px;
+    padding-block: 25px;
+  }
+  .footer-top > p {
+    grid-row: 2;
+    font-size: 7px;
+  }
+  .footer-top > a:last-child {
+    grid-column: 2;
+    grid-row: 1/3;
+    font-size: 10px;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    gap: 8px;
+    font-size: 7px;
+    padding-bottom: max(23px, env(safe-area-inset-bottom));
+  }
+  .cursor-follower {
+    display: none;
+  }
+  .project-detail {
+    padding-top: 102px;
+    padding-bottom: 64px;
+  }
+  .project-detail-top {
+    margin-bottom: 28px;
+    gap: 10px;
+  }
+  .project-detail-top .eyebrow {
+    font-size: 7px;
+    text-align: right;
+  }
+  .project-detail-top .text-link {
+    font-size: 11px;
+  }
+  .project-detail h1 {
+    font-size: 46px;
+  }
+  .detail-summary {
+    font-size: 25px;
+  }
+  .detail-meta {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    margin-block: 30px;
+  }
+  .detail-preview .project-art {
+    aspect-ratio: 1.05;
+    padding: 40px 23px;
+  }
+  .detail-preview .sports-content {
+    min-height: 193px;
+    padding: 24px 18px;
+  }
+  .detail-preview .sports-content h4,
+  .detail-preview .business-body h4 {
+    font-size: 29px;
+  }
+  .detail-preview .court-scene {
+    height: 130px;
+    right: 6px;
+    width: 43%;
+  }
+  .detail-preview .floating-ticket {
+    right: 12px;
+    bottom: 24px;
+    padding: 13px;
+  }
+  .detail-preview .project-art-business {
+    padding-right: 65px;
+    padding-left: 18px;
+  }
+  .detail-preview .business-body {
+    padding: 25px 18px;
+  }
+  .detail-preview .business-sculpture {
+    right: -20px;
+    top: 60px;
+    transform: scale(0.7) rotate(-16deg);
+  }
+  .detail-preview .mobile-mockup {
+    right: 6px;
+    bottom: 23px;
+  }
+  .detail-preview .project-art-dashboard {
+    padding: 40px 13px;
+  }
+  .detail-preview .dashboard-content {
+    padding: 16px 10px;
+  }
+  .detail-preview .dashboard-screen {
+    min-height: 290px;
+  }
+  .detail-preview .chart-bars {
+    height: 65px;
+  }
+  .detail-story {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    margin-top: 38px;
+  }
+  .detail-story h2 {
+    font-size: 27px;
+  }
+  .detail-story p:not(.eyebrow) {
+    font-size: 13px;
+  }
+  .detail-actions {
+    gap: 12px;
+  }
+  .detail-next {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    margin-top: 50px;
+  }
+}
+@media (max-width: 374px) {
+  .container,
+  .section-shell {
+    width: calc(100% - 36px);
+  }
+  .hero-title {
+    font-size: 11.5vw;
+  }
+  .hero-actions {
+    gap: 16px;
+  }
+  .hero-actions .btn {
+    font-size: 11px;
+    padding-inline: 13px;
+  }
+  .hero-kicker {
+    font-size: 7px;
+  }
+  .architecture-object {
+    transform: perspective(1000px) rotateX(52deg) rotateZ(-32deg) scale(0.73);
+  }
+  .layer-buttons button {
+    padding-inline: 7px;
+    gap: 5px;
+    font-size: 10px;
+  }
+  .architecture-meta .eyebrow {
+    font-size: 6px;
+  }
+  .hero-stack > span:last-child {
+    max-width: 124px;
+  }
+  .project-art {
+    padding-inline: 19px;
+  }
+  .project-art-business {
+    padding-right: 61px;
+  }
+  .contact-email {
+    font-size: 11px;
+  }
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+  .dashboard-screen aside {
+    width: 55px;
+  }
+  .dashboard-screen aside > span {
+    font-size: 5px;
+    gap: 3px;
+  }
+  .dashboard-screen aside svg {
+    width: 8px;
+  }
+  .dashboard-metrics {
+    gap: 4px;
+  }
+  .dashboard-metrics > div {
+    padding: 5px;
+  }
+  .dashboard-metrics .dash-status {
+    font-size: 8px;
+  }
+}
+@media (hover: none) {
+  .cursor-follower {
+    display: none;
+  }
+  .btn:active {
+    opacity: 0.8;
+  }
+  .project-visual-link:active .browser-mockup {
+    transform: rotate(-1deg);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition-duration: 0s !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal[data-reveal] {
+    transform: none !important;
+    clip-path: none !important;
+  }
+  .text-mask > * {
+    transform: none;
+  }
+  .cursor-follower {
+    display: none;
+  }
+}

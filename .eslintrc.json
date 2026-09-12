@@ -1,4 +1,12 @@
 {
   "extends": ["next/core-web-vitals", "next/typescript"],
-  "ignorePatterns": ["next-env.d.ts", ".next/**", "node_modules/**"]
+  "ignorePatterns": [
+    "next-env.d.ts",
+    ".next/**",
+    ".next-portfolio/**",
+    "node_modules/**",
+    "artifacts/**",
+    "playwright-report/**",
+    "test-results/**"
+  ]
 }

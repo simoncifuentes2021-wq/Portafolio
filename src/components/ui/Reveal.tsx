@@ -1,27 +1,52 @@
 "use client";
-
-import { motion } from "framer-motion";
-import type { ReactNode } from "react";
+import { useEffect, useRef, type ReactNode, type CSSProperties } from "react";
 import { cn } from "@/lib/utils";
 
 export function Reveal({
   children,
   className,
   delay = 0,
+  variant = "rise",
 }: {
   children: ReactNode;
   className?: string;
   delay?: number;
+  variant?: "rise" | "slide" | "depth" | "mask";
 }) {
+  const ref = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const el = ref.current;
+    if (
+      !el ||
+      matchMedia("(prefers-reduced-motion: reduce)").matches ||
+      !("IntersectionObserver" in window)
+    )
+      return;
+    if (el.getBoundingClientRect().top < window.innerHeight) return;
+    el.dataset.reveal = "waiting";
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) {
+          el.dataset.reveal = "visible";
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.06 },
+    );
+    // Observe outside the mask: a fully clipped target cannot intersect.
+    observer.observe(variant === "mask" ? (el.parentElement ?? el) : el);
+    return () => {
+      observer.disconnect();
+      delete el.dataset.reveal;
+    };
+  }, [variant]);
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 12 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 0.55, delay, ease: [0.21, 0.47, 0.32, 0.98] }}
-      className={cn(className)}
+    <div
+      ref={ref}
+      className={cn("reveal", "reveal-" + variant, className)}
+      style={{ "--reveal-delay": delay + "s" } as CSSProperties}
     >
       {children}
-    </motion.div>
+    </div>
   );
 }

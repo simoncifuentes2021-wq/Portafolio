@@ -1,4 +1,9 @@
 .next
+.next-portfolio
+test-results
+playwright-report
+artifacts
+tsconfig.tsbuildinfo
 node_modules
 out
 dist

@@ -3,13 +3,36 @@ import { Resend } from "resend";
 import { contactSchema } from "@/lib/validations";
 
 export async function POST(request: Request) {
+  if (Number(request.headers.get("content-length") ?? 0) > 24000) {
+    return NextResponse.json(
+      { message: "El mensaje es demasiado largo." },
+      { status: 413 },
+    );
+  }
   try {
-    const body = await request.json();
+    const raw = await request.text();
+    if (raw.length > 24000)
+      return NextResponse.json(
+        { message: "El mensaje es demasiado largo." },
+        { status: 413 },
+      );
+    let body: unknown;
+    try {
+      body = JSON.parse(raw);
+    } catch {
+      return NextResponse.json(
+        { message: "El formato del mensaje no es válido." },
+        { status: 400 },
+      );
+    }
     const parsed = contactSchema.safeParse(body);
 
     if (!parsed.success) {
       return NextResponse.json(
-        { message: "Revisa los campos del formulario.", errors: parsed.error.flatten().fieldErrors },
+        {
+          message: "Revisa los campos del formulario.",
+          errors: parsed.error.flatten().fieldErrors,
+        },
         { status: 400 },
       );
     }
@@ -19,7 +42,10 @@ export async function POST(request: Request) {
 
     if (!apiKey || !contactEmail) {
       return NextResponse.json(
-        { message: "El envio de correos no esta configurado. Define RESEND_API_KEY y CONTACT_EMAIL." },
+        {
+          message:
+            "El formulario no está disponible en este momento. Puedes escribirme directamente al correo que aparece en esta página.",
+        },
         { status: 503 },
       );
     }
@@ -42,7 +68,9 @@ export async function POST(request: Request) {
       );
     }
 
-    return NextResponse.json({ message: "Mensaje enviado correctamente. Te respondere pronto." });
+    return NextResponse.json({
+      message: "Mensaje enviado correctamente. Te respondere pronto.",
+    });
   } catch {
     return NextResponse.json(
       { message: "Ocurrio un error inesperado al procesar el mensaje." },

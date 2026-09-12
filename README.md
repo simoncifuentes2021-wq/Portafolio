@@ -1,96 +1,69 @@
-# Portafolio de Simon Cifuentes
+# Simón Cifuentes — Ingeniería con intención
 
-Portafolio web profesional para un desarrollador fullstack enfocado en React, Next.js, FastAPI y PostgreSQL. El proyecto esta preparado para ejecutarse localmente y desplegarse en Vercel.
+Portfolio en Next.js App Router, React y TypeScript. Dirección visual grafito, papel cálido y lima. El diagnóstico y las decisiones de diseño están en [DESIGN.md](DESIGN.md).
 
-## Tecnologias
-
-- Next.js con App Router
-- React + TypeScript
-- Tailwind CSS
-- Framer Motion
-- Componentes base estilo shadcn/ui
-- Lucide React
-- React Icons
-- React Hook Form + Zod
-- Resend
-- clsx + tailwind-merge
-
-## Instalacion
+## Desarrollo
 
 ```bash
 npm install
 npm run dev
 ```
 
-El sitio quedara disponible en `http://localhost:3000`.
+Disponible en http://localhost:3000. Las fuentes WOFF2 se sirven localmente y sus licencias están en `src/app/fonts`. No se necesita conexión a Google para compilar.
 
-## Scripts
+## Verificación
 
 ```bash
-npm run dev
+npm run lint
+npm run typecheck
 npm run build
 npm run start
-npm run lint
+npm test
 ```
 
-## Variables de entorno
+Playwright necesita el servidor local en ejecución. Por defecto utiliza Chromium (`npx playwright install chromium`). También acepta `PLAYWRIGHT_CHROMIUM_EXECUTABLE` con la ruta a un Chrome instalado y `PLAYWRIGHT_BASE_URL` para cambiar la URL.
 
-Crea un archivo `.env.local` usando `.env.example` como referencia:
+La suite cubre escritorio y móvil: navegación, casos de estudio, controles de arquitectura, proceso, conexiones de tecnologías, validación del formulario, errores de red, teclado, reduced-motion, contenido sin JavaScript, desbordamientos, API y metadatos. El envío exitoso se simula: las pruebas no mandan correos reales. Axe comprueba reglas automáticas de accesibilidad; no sustituye una revisión manual.
 
-```bash
-RESEND_API_KEY=
-CONTACT_EMAIL=
-```
+`npm run format` aplica el formato de código. `node scripts/preview.mjs` captura el diseño en `artifacts/` usando Chrome local (o la variable anterior).
 
-Si estas variables no existen, el formulario mostrara un error controlado sin romper la aplicacion.
+## Rutas
 
-## Deploy en Vercel
+- `/`: presentación, proyectos, perfil, stack, servicios y contacto.
+- `/projects`: archivo de trabajo.
+- `/projects/[slug]`: tres casos de estudio prerenderizados.
+- `/contact?project=slug`: formulario contextual.
+- `/api/contact`: validación del mensaje y envío mediante Resend.
+- `/opengraph-image`, `/robots.txt`, `/sitemap.xml`: metadatos y rastreo.
 
-1. Sube el proyecto a GitHub.
-2. Importa el repositorio desde Vercel.
-3. Configura `RESEND_API_KEY` y `CONTACT_EMAIL` en Project Settings > Environment Variables.
-4. Ejecuta el deploy.
+## Configuración de publicación
 
-## Estructura
+Usa `.env.example` como referencia:
 
-```txt
-src/
-  app/
-    api/contact/route.ts
-    contact/page.tsx
-    projects/page.tsx
-    globals.css
-    layout.tsx
-    page.tsx
-  components/
-    effects/
-    layout/
-    sections/
-    ui/
-  data/
-  lib/
-public/
-  projects/
-```
+- `RESEND_API_KEY`: credencial de Resend, solo en el servidor.
+- `CONTACT_EMAIL`: destinatario autorizado para los mensajes.
+- `NEXT_PUBLIC_SITE_URL`: origen HTTPS real del portfolio para canonical, sitemap y enlaces sociales absolutos.
 
-## Secciones incluidas
+El formulario conserva el remitente de pruebas de Resend existente. Para usarlo con destinatarios externos, configura un remitente de tu dominio verificado en Resend. Si el servicio no está configurado, la interfaz ofrece un mensaje comprensible y mantiene el correo directo disponible.
 
-- Navbar fijo con blur
-- Hero animado
-- Sobre mi breve
-- Tecnologias visuales con iconos
-- Proyectos destacados
-- Servicios
-- Contacto con validacion y API
-- Footer profesional
+Sin dominio configurado no se inventa un canonical ni se incluyen URLs ficticias en el sitemap. Los datos del perfil y canales reales se mantienen en `src/data`.
 
-## TODO para personalizar
+## Contenido visual
 
-- Reemplazar URL real de GitHub en `src/data/socialLinks.ts`.
-- Reemplazar URL real de LinkedIn en `src/data/socialLinks.ts`.
-- Reemplazar correo real en `src/data/socialLinks.ts` y `.env.local`.
-- Agregar CV real en `public/cv.pdf`.
-- Reemplazar imagenes reales de proyectos en `public/projects`.
-- Agregar foto o avatar personal en `public/profile.svg` o `public/profile.png`.
-- Reemplazar dominio final en `src/app/layout.tsx`.
-- Reemplazar `public/og-image.svg` por una imagen final de marca.
+Las composiciones de proyectos son representaciones HTML/CSS de sus funciones, identificadas como tales. Los archivos originales solo contenían portadas SVG; no había capturas de producto. Los enlaces a demos y repositorios específicos no estaban disponibles: los casos ofrecen contacto y el perfil real de GitHub, con etiquetas honestas.
+
+El archivo de CV original solo era texto de ejemplo y no se presenta como un documento descargable. No se publican fechas de proyectos que estaban pendientes de confirmar, empresas, métricas ni experiencia inventada.
+
+## Interacciones y arquitectura
+
+- `Architecture`: capas CSS 3D, selector de responsabilidad y vista separada.
+- `ProcessExplorer`: un diagrama cambia con las cuatro etapas del proceso.
+- `Stack`: relaciones derivadas de los datos de proyectos.
+- `TiltSurface` y `MagneticButton`: resortes de Motion, solo con ratón y sin reduced-motion.
+- `Reveal`: observadores con limpieza y contenido visible sin JavaScript.
+- Menú móvil con `dialog` nativo, foco contenido, Escape y restauración de foco.
+- Scroll nativo, progreso y entradas de página breves, sin bloqueo artificial.
+
+Los estilos están separados en sistema global, proyectos, secciones y responsive. No hay WebGL ni bucles de renderizado continuos. Se retiraron los motivos 3D repetidos y sus dependencias.
+
+El directorio de compilación `.next-portfolio` evita interferir con la caché anterior del proyecto. Next.js permanece en la rama 15; PostCSS se fija dentro de Next a una versión corregida compatible.

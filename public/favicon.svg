@@ -1,5 +1,1 @@
-<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="64" height="64" rx="16" fill="#020617"/>
-  <rect x="2" y="2" width="60" height="60" rx="14" stroke="#67e8f9" stroke-opacity=".55" stroke-width="2"/>
-  <text x="14" y="40" fill="#e0f2fe" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="800">SC</text>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#10110f"/><circle cx="32" cy="32" r="25" fill="none" stroke="#d5ed86" stroke-opacity=".5"/><text x="15" y="39" fill="#d5ed86" font-family="Arial,sans-serif" font-size="26" font-weight="600" letter-spacing="-2">sc.</text></svg>

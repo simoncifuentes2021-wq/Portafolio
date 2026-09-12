@@ -1,57 +1,68 @@
-import { SectionHeader } from "@/components/ui/SectionHeader";
+import { ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
-import { WireframeStage } from "@/components/three/WireframeStage";
-import { specSheet, stackTable } from "@/data/skills";
+import { ProcessExplorer } from "@/components/interactive/ProcessExplorer";
+import { socialLinks } from "@/data/socialLinks";
 
 export function About() {
   return (
-    <section id="sobre-mi" className="section-shell">
-      <SectionHeader index="01" title="Sobre mí" lede="Un ingeniero en formación que construye software real." />
-
-      <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
-        <Reveal>
-          <div className="section-copy [&>p]:mt-0">
+    <section
+      id="sobre-mi"
+      className="about-section"
+      aria-labelledby="about-title"
+    >
+      <div className="container about-layout">
+        <div className="about-heading">
+          <p className="section-index">
+            <span>02</span>
+            <span className="index-line" />
+            Detrás del código
+          </p>
+          <Reveal variant="mask">
+            <h2 id="about-title">
+              Entender primero.
+              <br />
+              <em>Construir mejor.</em>
+            </h2>
+          </Reveal>
+          <div className="about-signature">
+            <span className="signature-mark">sc.</span>
+            <div>
+              <strong>Simón Cifuentes</strong>
+              <span>Desarrollador Fullstack · Temuco, CL</span>
+            </div>
+          </div>
+        </div>
+        <div className="about-copy">
+          <Reveal>
+            <p className="about-lead">
+              Me interesa lo que pasa entre una buena idea y un producto que
+              alguien puede usar.
+            </p>
             <p>
-              Soy Simón. Estudio el último año de Ingeniería Civil Informática y construyo productos
-              web completos: interfaces con React y Next.js, APIs con FastAPI, datos en PostgreSQL.
+              Estudio el último año de Ingeniería Civil Informática y construyo
+              productos web completos: interfaces con React y Next.js, APIs con
+              FastAPI y datos en PostgreSQL.
             </p>
-            <p className="mt-5">
-              Me interesa el software bien terminado — el que carga rápido, no se rompe a mitad de
-              camino y comunica con claridad. Prefiero resolver el problema de fondo antes que
-              acumular features: menos capas, mejor pensadas.
+            <p>
+              Prefiero resolver el problema de fondo antes que acumular
+              funcionalidades. Software que carga rápido, comunica con claridad
+              y está pensado de principio a fin.
             </p>
-            <p className="mt-5">
-              Busco mi primera experiencia profesional: proyectos, prácticas o freelance, donde
-              llevar productos de punta a punta y aprender de gente que lleva más años en esto.
+            <p>
+              Busco mi primera experiencia profesional: prácticas, proyectos o
+              freelance, donde aportar, construir y aprender de un equipo.
             </p>
-          </div>
-
-          <div className="mx-auto mt-10 h-56 w-56 sm:h-64 sm:w-64 lg:mx-0 lg:h-80 lg:w-80">
-            <WireframeStage variant="motif" interactive={false} />
-          </div>
-        </Reveal>
-
-        <Reveal delay={0.08}>
-          <p className="label-mono mb-4">Ficha técnica</p>
-          <dl>
-            {specSheet.map((row) => (
-              <div key={row.label} className="spec-row">
-                <dt>{row.label}</dt>
-                <dd>{row.value}</dd>
-              </div>
-            ))}
-          </dl>
-
-          {/* tabla técnica del stack, estilo spec-sheet */}
-          <div className="mt-10 border border-line bg-surface/60 p-5 font-mono text-xs leading-6">
-            {stackTable.map((row) => (
-              <div key={row.area} className="grid grid-cols-[6.5rem_1fr] gap-4 border-b border-line/60 py-2 last:border-b-0">
-                <span className="text-muted">{row.area}</span>
-                <span className="text-ink">{row.tools}</span>
-              </div>
-            ))}
-          </div>
-        </Reveal>
+            <a
+              href={socialLinks.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-link"
+            >
+              Conoce mi perfil <ArrowUpRight size={16} />
+            </a>
+          </Reveal>
+        </div>
+        <ProcessExplorer />
       </div>
     </section>
   );
