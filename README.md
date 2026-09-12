@@ -70,4 +70,4 @@ El archivo de CV original solo era texto de ejemplo y no se presenta como un doc
 
 Los estilos están separados en sistema global, proyectos, secciones, responsive y experiencia interactiva. No hay WebGL ni bucles de renderizado continuos. Se retiraron los motivos 3D repetidos y sus dependencias.
 
-El directorio de compilación `.next-portfolio` evita interferir con la caché anterior del proyecto. Next.js permanece en la rama 15; PostCSS se fija dentro de Next a una versión corregida compatible.
+Next.js utiliza su directorio de compilación estándar `.next`, compatible con Vercel. Next.js permanece en la rama 15; PostCSS se fija dentro de Next a una versión corregida compatible.
