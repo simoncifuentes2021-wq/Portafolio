@@ -35,11 +35,7 @@ export function Architecture() {
         </span>
         <span className="eyebrow">FIG. 01</span>
       </div>
-      <TiltSurface
-        className="architecture-stage"
-        intensity={10}
-        enableTouch
-      >
+      <TiltSurface className="architecture-stage" intensity={10} enableTouch>
         <div className="architecture-halo" aria-hidden="true" />
         <div className="architecture-axis" aria-hidden="true">
           <span>Y</span>

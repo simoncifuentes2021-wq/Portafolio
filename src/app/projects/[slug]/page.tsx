@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, ArrowUpRight, Check } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, ArrowDown, Check } from "lucide-react";
 import { projects } from "@/data/projects";
 import { socialLinks } from "@/data/socialLinks";
-import { siteUrl } from "@/lib/site";
+import { siteUrl, socialImage } from "@/lib/site";
 import { ProjectPreview } from "@/components/sections/ProjectPreview";
+import { ProjectJourney } from "@/components/interactive/ProjectJourney";
 type Props = { params: Promise<{ slug: string }> };
 export function generateStaticParams() {
   return projects.map(({ slug }) => ({ slug }));
@@ -22,13 +23,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: project.name + " | Simón Cifuentes",
       description: project.summary,
       url: siteUrl ? siteUrl + "/projects/" + slug : undefined,
-      images: [],
+      images: [socialImage],
     },
     twitter: {
-      card: "summary",
+      card: "summary_large_image",
       title: project.name + " | Simón Cifuentes",
       description: project.summary,
-      images: [],
+      images: [socialImage],
     },
   };
 }
@@ -41,7 +42,7 @@ export default async function ProjectPage({ params }: Props) {
   return (
     <main id="main-content" tabIndex={-1} className="container project-detail">
       <div className="project-detail-top">
-        <Link href="/#proyectos" className="text-link">
+        <Link href={"/#" + project.slug} className="text-link">
           <ArrowLeft size={15} />
           Todos los proyectos
         </Link>
@@ -51,6 +52,13 @@ export default async function ProjectPage({ params }: Props) {
       </div>
       <h1>{project.name}</h1>
       <p className="detail-summary">{project.summary}</p>
+      <nav className="case-navigation" aria-label="Contenido del caso">
+        <a href="#contexto">El contexto</a>
+        <a href="#recorrido">
+          Explorar el funcionamiento <ArrowDown size={14} />
+        </a>
+        <a href="#conversacion">Hablemos del proyecto</a>
+      </nav>
       <div className="detail-meta">
         <div>
           <span className="eyebrow">Mi participación</span>
@@ -68,7 +76,7 @@ export default async function ProjectPage({ params }: Props) {
       <div className="detail-preview">
         <ProjectPreview visual={project.visual} name={project.name} />
       </div>
-      <div className="detail-story">
+      <div className="detail-story" id="contexto">
         <section>
           <p className="eyebrow">01 / El contexto</p>
           <h2>El problema por resolver.</h2>
@@ -89,7 +97,8 @@ export default async function ProjectPage({ params }: Props) {
           </ul>
         </section>
       </div>
-      <div className="detail-actions">
+      <ProjectJourney visual={project.visual} />
+      <div className="detail-actions" id="conversacion">
         <Link
           href={"/contact?project=" + project.slug}
           className="btn btn-primary"

@@ -1,6 +1,7 @@
 import { ArrowDown, ArrowUpRight } from "lucide-react";
 import { MagneticButton } from "@/components/ui/MagneticButton";
 import { Architecture } from "@/components/interactive/Architecture";
+import { ProfileBrief } from "@/components/interactive/ProfileBrief";
 
 export function Hero() {
   return (
@@ -62,7 +63,7 @@ export function Hero() {
             React <i /> Next.js <i /> FastAPI <i /> PostgreSQL
           </span>
         </p>
-        <span className="hero-edition eyebrow">Portfolio / Vol. 01</span>
+        <ProfileBrief />
       </div>
     </section>
   );

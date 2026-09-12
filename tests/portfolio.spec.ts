@@ -122,6 +122,10 @@ test("all routes have one heading and no horizontal overflow", async ({
       ),
     ).toBe(true);
     await expect(page.locator("html")).toHaveAttribute("lang", "es");
+    await expect(page.locator('meta[property="og:image"]')).toHaveAttribute(
+      "content",
+      /\/opengraph-image/,
+    );
   }
   await page.goto("/projects/does-not-exist");
   await expect(page.getByRole("heading", { level: 1 })).toContainText(

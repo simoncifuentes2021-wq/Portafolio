@@ -32,7 +32,7 @@ La suite cubre escritorio y móvil: navegación, casos de estudio, controles de 
 - `/`: presentación, proyectos, perfil, stack, servicios y contacto.
 - `/projects`: archivo de trabajo.
 - `/projects/[slug]`: tres casos de estudio prerenderizados.
-- `/contact?project=slug`: formulario contextual.
+- `/contact?project=slug` o `/contact?service=slug`: formulario contextual.
 - `/api/contact`: validación del mensaje y envío mediante Resend.
 - `/opengraph-image`, `/robots.txt`, `/sitemap.xml`: metadatos y rastreo.
 
@@ -63,7 +63,11 @@ El archivo de CV original solo era texto de ejemplo y no se presenta como un doc
 - `Reveal`: observadores con limpieza y contenido visible sin JavaScript.
 - Menú móvil con `dialog` nativo, foco contenido, Escape y restauración de foco.
 - Scroll nativo, progreso y entradas de página breves, sin bloqueo artificial.
+- Resumen profesional accesible desde «Mi perfil en breve», con foco contenido y cierre por Escape.
+- Casos con navegación interna y un recorrido interactivo que explica uso y responsabilidades de desarrollo.
+- Servicios con consulta contextual y selector de motivo que conserva el mensaje escrito por el visitante.
+- Sección activa en navegación y retorno desde un caso al proyecto exacto.
 
-Los estilos están separados en sistema global, proyectos, secciones y responsive. No hay WebGL ni bucles de renderizado continuos. Se retiraron los motivos 3D repetidos y sus dependencias.
+Los estilos están separados en sistema global, proyectos, secciones, responsive y experiencia interactiva. No hay WebGL ni bucles de renderizado continuos. Se retiraron los motivos 3D repetidos y sus dependencias.
 
 El directorio de compilación `.next-portfolio` evita interferir con la caché anterior del proyecto. Next.js permanece en la rama 15; PostCSS se fija dentro de Next a una versión corregida compatible.

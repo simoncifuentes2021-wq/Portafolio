@@ -29,6 +29,14 @@ Motion se reutiliza para pequeños resortes y profundidad; CSS para la escultura
 
 Se evitan contextos WebGL en la experiencia nueva: CSS 3D logra el lenguaje de capas sin cargar Three.js. El movimiento se limita a transform y opacity, con fallbacks estáticos, reduced-motion y soporte táctil. El contenido principal se sirve como HTML y sigue visible sin JavaScript.
 
-## Validación prevista
+## Validación realizada
 
-Build de producción, lint, TypeScript, rutas y metadatos; validación de API sin enviar correos; navegación entre rutas, anclas, teclado, formularios, móvil, reduced-motion, desbordamientos y consola en navegador automatizado cuando esté disponible.
+Build de producción, lint y TypeScript completados. Se verificaron 23 pruebas de navegador en Chrome de escritorio y móvil emulado: rutas, metadatos, anclas, teclado, formularios, API sin envío real, reduced-motion y contenido sin JavaScript. El barrido de 320, 390, 768, 1024 y 1920 px se ejecuta una sola vez y no detecta desbordamientos horizontales.
+
+Los análisis automáticos de accesibilidad incluyen la página, el menú móvil, los casos y el resumen profesional. La ficha se audita dentro del diálogo activo; el fondo inerte se revisa por separado. Se comprueban el recorrido de Tab, Escape y la restauración del foco. La revisión visual abarca escritorio, móvil, resumen, contacto y recorrido de proyecto. El informe local de producción y las capturas se generan en `artifacts/`; las mediciones locales no equivalen a Core Web Vitals de usuarios reales.
+
+## Segunda iteración: una experiencia útil
+
+El refinamiento conserva la dirección visual y prioriza dos niveles de lectura. Una ficha modal permite conocer formación, enfoque y disponibilidad sin recorrer toda la página; cada caso ofrece un recorrido interactivo que vincula acciones de uso y responsabilidades de desarrollo. Su contenido deriva del alcance documentado, sin añadir resultados ni métricas.
+
+La navegación señala la sección activa y el regreso desde un caso conserva el proyecto concreto. Los servicios abren consultas con contexto. El formulario permite elegir el motivo y solo sustituye mensajes vacíos o sugeridos; respeta el texto escrito por la persona. Se aumentan tamaños de lectura y se adaptan el resumen, las pestañas y el contacto a pantallas pequeñas. No se incorporan nuevas dependencias.

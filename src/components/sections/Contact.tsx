@@ -13,10 +13,23 @@ import { contactSchema, type ContactFormValues } from "@/lib/validations";
 export function Contact({
   standalone = false,
   projectName,
+  serviceTitle,
 }: {
   standalone?: boolean;
   projectName?: string;
+  serviceTitle?: string;
 }) {
+  const [topic, setTopic] = useState("project");
+  const messageTemplates = {
+    project: projectName
+      ? "Hola Simón, me gustaría saber más sobre " + projectName + "."
+      : serviceTitle
+        ? "Hola Simón, me gustaría conversar sobre " + serviceTitle + "."
+        : "Hola Simón, tengo una idea de proyecto y me gustaría conversar contigo.",
+    opportunity:
+      "Hola Simón, me gustaría conversar sobre una oportunidad profesional.",
+    conversation: "Hola Simón, me gustaría conversar contigo sobre…",
+  };
   const [status, setStatus] = useState<{
     type: "success" | "error";
     message: string;
@@ -27,17 +40,23 @@ export function Contact({
     register,
     handleSubmit,
     reset,
+    getValues,
+    setValue,
     formState: { errors, isSubmitting },
   } = useForm<ContactFormValues>({
     resolver: zodResolver(contactSchema),
     defaultValues: {
       name: "",
       email: "",
-      message: projectName
-        ? "Hola Simón, me gustaría saber más sobre " + projectName + "."
-        : "",
+      message: projectName || serviceTitle ? messageTemplates.project : "",
     },
   });
+  function selectTopic(next: keyof typeof messageTemplates) {
+    setTopic(next);
+    const current = getValues("message");
+    if (!current.trim() || Object.values(messageTemplates).includes(current))
+      setValue("message", messageTemplates[next], { shouldDirty: true });
+  }
   async function onSubmit(values: ContactFormValues) {
     setStatus(null);
     try {
@@ -149,6 +168,34 @@ export function Contact({
           aria-label="Enviar un mensaje"
           aria-busy={isSubmitting}
         >
+          <fieldset className="contact-topics">
+            <legend>¿Qué te trae por aquí?</legend>
+            <div>
+              {(
+                [
+                  ["project", "Un proyecto"],
+                  ["opportunity", "Una oportunidad"],
+                  ["conversation", "Una conversación"],
+                ] as const
+              ).map(([value, label]) => (
+                <label key={value}>
+                  <input
+                    type="radio"
+                    name="contact-topic"
+                    value={value}
+                    checked={topic === value}
+                    onChange={() => selectTopic(value)}
+                  />
+                  <span>{label}</span>
+                </label>
+              ))}
+            </div>
+          </fieldset>
+          {(projectName || serviceTitle) && (
+            <p className="contact-context">
+              Conversemos sobre <strong>{projectName ?? serviceTitle}</strong>
+            </p>
+          )}
           <div className="form-row">
             <div>
               <label htmlFor="name">Tu nombre</label>

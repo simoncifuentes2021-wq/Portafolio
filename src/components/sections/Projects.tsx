@@ -16,13 +16,14 @@ export function Projects({ standalone = false }: { standalone?: boolean }) {
       <SectionHeader
         index="01"
         title="Trabajo seleccionado"
-        lede="Menos promesas. Más producto."
+        lede="Ideas que toman forma."
         as={standalone ? "h1" : "h2"}
         aside="Tres formas de resolver problemas reales."
       />
       <div className="project-list">
         {projects.map((project, index) => (
           <article
+            id={project.slug}
             key={project.slug}
             className={"project-case project-case-" + project.visual}
           >
@@ -53,6 +54,10 @@ export function Projects({ standalone = false }: { standalone?: boolean }) {
               </h3>
               <p className="project-summary">{project.summary}</p>
               <p className="project-excerpt">{project.problem}</p>
+              <p className="project-ownership">
+                <span>Mi participación</span>
+                {project.role}
+              </p>
               <ul className="tech-tags" aria-label="Tecnologías">
                 {project.technologies.map((tech) => (
                   <li key={tech}>{tech}</li>

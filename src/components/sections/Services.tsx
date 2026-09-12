@@ -1,4 +1,5 @@
-import { Plus } from "lucide-react";
+import { Plus, ArrowUpRight } from "lucide-react";
+import Link from "next/link";
 import { services } from "@/data/services";
 import { Reveal } from "@/components/ui/Reveal";
 export function Services() {
@@ -37,6 +38,12 @@ export function Services() {
                 <div>
                   <p>{service.description}</p>
                   <span className="eyebrow">{service.tag}</span>
+                  <Link
+                    className="text-link service-contact"
+                    href={"/contact?service=" + service.slug}
+                  >
+                    Consultar sobre este servicio <ArrowUpRight size={14} />
+                  </Link>
                 </div>
               </details>
             ))}

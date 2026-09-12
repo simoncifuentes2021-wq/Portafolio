@@ -14,7 +14,11 @@ test("layout remains inside the viewport throughout the scroll", async ({
       "#servicios",
       "#contacto",
     ]) {
-      await page.locator(selector).scrollIntoViewIfNeeded();
+      await page
+        .locator(selector)
+        .evaluate((element) =>
+          element.scrollIntoView({ block: "start", behavior: "instant" }),
+        );
       await expect
         .poll(
           () =>

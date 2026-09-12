@@ -271,7 +271,7 @@ section[id] {
   align-items: center;
   gap: 5px;
   color: var(--muted);
-  font-size: 11px;
+  font-size: 13px;
   transition: color 0.2s;
 }
 .nav-links a::after {
@@ -429,7 +429,7 @@ section[id] {
   padding-block: 48px 40px;
 }
 .hero-kicker {
-  font-size: 9px;
+  font-size: 10px;
   letter-spacing: 0.1em;
   margin-bottom: 26px;
 }
@@ -472,7 +472,7 @@ section[id] {
 }
 .hero-description {
   color: var(--muted);
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.8;
   margin: 29px 0;
   max-width: 480px;
@@ -551,7 +551,7 @@ section[id] {
   gap: 12px;
 }
 .architecture-meta .eyebrow {
-  font-size: 8px;
+  font-size: 9px;
   display: inline-flex;
   align-items: center;
   gap: 9px;
@@ -830,7 +830,7 @@ section[id] {
   padding: 9px 12px;
   border: 1px solid transparent;
   border-radius: 3px;
-  font-size: 10px;
+  font-size: 12px;
   color: var(--muted);
   transition: 0.25s;
 }
@@ -868,7 +868,7 @@ section[id] {
   color: var(--ink);
 }
 .layer-description p:last-child {
-  font-size: 11px;
+  font-size: 12px;
   color: var(--muted);
   line-height: 1.7;
   margin-top: 7px;

@@ -19,7 +19,7 @@
 .project-type {
   display: flex;
   gap: 17px;
-  font-size: 9px;
+  font-size: 10px;
 }
 .project-type > span {
   color: var(--accent);
@@ -42,7 +42,7 @@
 }
 .project-excerpt {
   margin-top: 15px;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.85;
   color: var(--muted);
   max-width: 350px;
@@ -803,7 +803,7 @@
 }
 .detail-story p:not(.eyebrow) {
   color: var(--muted);
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.9;
   margin-top: 17px;
 }

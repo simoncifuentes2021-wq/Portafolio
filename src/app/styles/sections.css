@@ -61,7 +61,7 @@
   padding-top: 44px;
 }
 .about-copy p {
-  font-size: 13px;
+  font-size: 15px;
   line-height: 1.85;
   color: #596451;
   margin-bottom: 18px;
@@ -141,7 +141,7 @@
   letter-spacing: -0.03em;
 }
 .process-detail p {
-  font-size: 12px;
+  font-size: 14px;
   color: #596451;
   line-height: 1.8;
   margin-top: 7px;
@@ -303,7 +303,7 @@
 }
 .stack-context > p {
   color: var(--muted);
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.8;
   margin-top: 15px;
   min-height: 65px;
@@ -323,7 +323,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 12px;
+  font-size: 13px;
   min-height: 42px;
 }
 .stack-related a:hover {
@@ -412,7 +412,7 @@
   padding: 0 30px 23px;
 }
 .service-item p {
-  font-size: 12px;
+  font-size: 14px;
   color: var(--muted);
   line-height: 1.8;
 }
@@ -475,7 +475,7 @@
   gap: 110px;
 }
 .contact-copy > p {
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.85;
   color: var(--muted);
   max-width: 370px;

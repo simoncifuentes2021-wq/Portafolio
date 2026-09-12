@@ -4,9 +4,11 @@ import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import { navLinks } from "@/data/navLinks";
+import { useActiveSection } from "@/lib/useActiveSection";
 
 export function Navbar() {
   const pathname = usePathname();
+  const activeSection = useActiveSection();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const menu = useRef<HTMLDialogElement>(null);
@@ -62,7 +64,9 @@ export function Navbar() {
                   ? "page"
                   : pathname === "/contact" && link.index === "05"
                     ? "page"
-                    : undefined
+                    : activeSection === link.href.split("#")[1]
+                      ? "location"
+                      : undefined
               }
             >
               <span>{link.index}</span>

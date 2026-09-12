@@ -10,6 +10,7 @@ import "./globals.css";
 import "./styles/projects.css";
 import "./styles/sections.css";
 import "./styles/responsive.css";
+import "./styles/experience.css";
 
 const display = localFont({
   src: "./fonts/fraunces-italic-latin.woff2",
@@ -31,9 +32,8 @@ const mono = localFont({
   display: "swap",
 });
 export const metadata: Metadata = {
-  ...(siteUrl
-    ? { metadataBase: new URL(siteUrl), alternates: { canonical: "/" } }
-    : {}),
+  metadataBase: new URL(siteUrl ?? "http://localhost:3000"),
+  ...(siteUrl ? { alternates: { canonical: "/" } } : {}),
   title: { default: siteTitle, template: "%s | Simón Cifuentes" },
   description: siteDescription,
   authors: [{ name: "Simón Cifuentes" }],
