@@ -10,7 +10,11 @@ export function SectionIndicator() {
       data-paper={active === "sobre-mi"}
       aria-label="Secciones de la página"
     >
-      {[{ label: "Inicio", href: "/#inicio" }, ...navLinks].map((link) => (
+      {[
+        { label: "Inicio", href: "/#inicio" },
+        { label: "Observatorio", href: "/#observatorio" },
+        ...navLinks,
+      ].map((link) => (
         <a
           key={link.href}
           href={link.href}

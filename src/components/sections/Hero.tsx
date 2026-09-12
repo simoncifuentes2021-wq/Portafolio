@@ -47,14 +47,14 @@ export function Hero() {
         <Architecture />
       </div>
       <div className="container hero-bottom">
-        <a href="#proyectos" className="scroll-cue">
+        <a href="#observatorio" className="scroll-cue">
           <span className="scroll-cue-icon">
             <ArrowDown size={14} />
           </span>
           <span>
             Del concepto al producto
             <br />
-            <strong>Conoce mi trabajo</strong>
+            <strong>Explora en 3D</strong>
           </span>
         </a>
         <p className="hero-stack">

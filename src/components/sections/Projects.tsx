@@ -3,6 +3,7 @@ import { ArrowUpRight, ArrowRight } from "lucide-react";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Reveal } from "@/components/ui/Reveal";
 import { TiltSurface } from "@/components/ui/TiltSurface";
+import { ScrollDepth } from "@/components/ui/ScrollDepth";
 import { ProjectPreview } from "./ProjectPreview";
 import { projects } from "@/data/projects";
 
@@ -31,19 +32,24 @@ export function Projects({ standalone = false }: { standalone?: boolean }) {
               variant={index === 1 ? "slide" : "depth"}
               className="project-visual-wrap"
             >
-              <TiltSurface className="project-tilt" intensity={3}>
-                <Link
-                  href={"/projects/" + project.slug}
-                  className="project-visual-link"
-                  data-cursor="Ver proyecto ↗"
-                  aria-label={"Ver caso de estudio: " + project.name}
-                >
-                  <ProjectPreview visual={project.visual} name={project.name} />
-                  <span className="project-open">
-                    <ArrowUpRight size={21} />
-                  </span>
-                </Link>
-              </TiltSurface>
+              <ScrollDepth>
+                <TiltSurface className="project-tilt" intensity={3}>
+                  <Link
+                    href={"/projects/" + project.slug}
+                    className="project-visual-link"
+                    data-cursor="Ver proyecto ↗"
+                    aria-label={"Ver caso de estudio: " + project.name}
+                  >
+                    <ProjectPreview
+                      visual={project.visual}
+                      name={project.name}
+                    />
+                    <span className="project-open">
+                      <ArrowUpRight size={21} />
+                    </span>
+                  </Link>
+                </TiltSurface>
+              </ScrollDepth>
             </Reveal>
             <Reveal variant="slide" className="project-info">
               <p className="eyebrow project-type">

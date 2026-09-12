@@ -296,6 +296,9 @@
   z-index: 1;
 }
 .court-tag {
+  background: #e7eddb;
+  color: #25382a;
+  padding: 2px 3px;
   position: absolute;
   font: 4px var(--font-mono);
   bottom: -8px;
@@ -345,12 +348,16 @@
   padding: 7px;
 }
 .mockup-caption {
+  z-index: 3;
+  padding: 4px 6px;
+  border-radius: 3px;
+  background: #24321f;
   position: absolute;
   bottom: 20px;
   left: 24px;
   font: 7px var(--font-mono);
   letter-spacing: 0.06em;
-  color: #ffffffb0;
+  color: #e3ecd8;
 }
 .project-case-business {
   grid-template-columns: 1fr 1.45fr;
@@ -368,6 +375,7 @@
   transform: rotate(-4deg);
 }
 .project-art-business .mockup-caption {
+  background: #e6eade;
   color: #37402e;
 }
 .business-screen {

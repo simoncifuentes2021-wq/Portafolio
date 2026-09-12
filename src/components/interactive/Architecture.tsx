@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { ArrowUpRight, Layers3, MoveUpRight } from "lucide-react";
 import { TiltSurface } from "@/components/ui/TiltSurface";
+import { SystemPulse } from "./SystemPulse";
 
 const layers = [
   {
@@ -27,8 +28,9 @@ const layers = [
 export function Architecture() {
   const [active, setActive] = useState(0);
   const [expanded, setExpanded] = useState(false);
+  const [pulse, setPulse] = useState<number | null>(null);
   return (
-    <div className="architecture" data-expanded={expanded}>
+    <div className="architecture" data-expanded={expanded} data-pulse={pulse}>
       <div className="architecture-meta">
         <span className="eyebrow">
           <span className="tiny-cross">+</span> Anatomía de una aplicación
@@ -151,6 +153,7 @@ export function Architecture() {
         </p>
         <p>{layers[active].description}</p>
       </div>
+      <SystemPulse onStage={setPulse} />
     </div>
   );
 }

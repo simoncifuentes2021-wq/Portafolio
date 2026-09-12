@@ -31,7 +31,7 @@ Se evitan contextos WebGL en la experiencia nueva: CSS 3D logra el lenguaje de c
 
 ## Validación realizada
 
-Build de producción, lint y TypeScript completados. Se verificaron 23 pruebas de navegador en Chrome de escritorio y móvil emulado: rutas, metadatos, anclas, teclado, formularios, API sin envío real, reduced-motion y contenido sin JavaScript. El barrido de 320, 390, 768, 1024 y 1920 px se ejecuta una sola vez y no detecta desbordamientos horizontales.
+Build de producción, lint y TypeScript completados. Se verificaron 27 pruebas de navegador en Chrome de escritorio y móvil emulado: rutas, metadatos, anclas, teclado, arrastre 3D, selección de proyectos, recorrido de solicitud, formularios, API sin envío real, reduced-motion y contenido sin JavaScript. El barrido de 320, 390, 768, 1024 y 1920 px se ejecuta una sola vez y no detecta desbordamientos horizontales.
 
 Los análisis automáticos de accesibilidad incluyen la página, el menú móvil, los casos y el resumen profesional. La ficha se audita dentro del diálogo activo; el fondo inerte se revisa por separado. Se comprueban el recorrido de Tab, Escape y la restauración del foco. La revisión visual abarca escritorio, móvil, resumen, contacto y recorrido de proyecto. El informe local de producción y las capturas se generan en `artifacts/`; las mediciones locales no equivalen a Core Web Vitals de usuarios reales.
 
@@ -40,3 +40,7 @@ Los análisis automáticos de accesibilidad incluyen la página, el menú móvil
 El refinamiento conserva la dirección visual y prioriza dos niveles de lectura. Una ficha modal permite conocer formación, enfoque y disponibilidad sin recorrer toda la página; cada caso ofrece un recorrido interactivo que vincula acciones de uso y responsabilidades de desarrollo. Su contenido deriva del alcance documentado, sin añadir resultados ni métricas.
 
 La navegación señala la sección activa y el regreso desde un caso conserva el proyecto concreto. Los servicios abren consultas con contexto. El formulario permite elegir el motivo y solo sustituye mensajes vacíos o sugeridos; respeta el texto escrito por la persona. Se aumentan tamaños de lectura y se adaptan el resumen, las pestañas y el contacto a pantallas pequeñas. No se incorporan nuevas dependencias.
+
+## Exploración espacial
+
+El observatorio presenta los tres proyectos como planos de una misma escultura CSS 3D. Seleccionar un proyecto lo extrae del conjunto y muestra su contexto real. La escena admite arrastre horizontal, slider de teclado, compactación y reinicio; el gesto vertical queda disponible para el scroll móvil. Las presentaciones de proyectos ajustan su perspectiva durante el scroll y el Hero permite seguir visualmente una solicitud a través de sus capas. Los efectos responden a la interacción, sin rotación automática continua ni nuevas dependencias. Reduced-motion conserva los controles y sustituye el recorrido animado por su resultado inmediato.

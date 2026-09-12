@@ -59,6 +59,9 @@ El archivo de CV original solo era texto de ejemplo y no se presenta como un doc
 - `Architecture`: capas CSS 3D, selector de responsabilidad y vista separada.
 - `ProcessExplorer`: un diagrama cambia con las cuatro etapas del proceso.
 - `Stack`: relaciones derivadas de los datos de proyectos.
+- `ProjectObservatory`: escultura 3D de proyectos con arrastre horizontal, giro por teclado, selección y compactación.
+- `SystemPulse`: recorrido visual de una solicitud por las capas del Hero, con resultado inmediato en reduced-motion.
+- `ScrollDepth`: perspectiva y escala ligadas al scroll de las presentaciones de proyectos.
 - `TiltSurface` y `MagneticButton`: resortes de Motion, solo con ratón y sin reduced-motion.
 - `Reveal`: observadores con limpieza y contenido visible sin JavaScript.
 - Menú móvil con `dialog` nativo, foco contenido, Escape y restauración de foco.

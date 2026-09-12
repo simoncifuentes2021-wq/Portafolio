@@ -61,6 +61,10 @@ test("project journeys support keyboard exploration and returning to the exact p
     );
     await page.keyboard.press("End");
     await expect(tabs.nth(2)).toHaveAttribute("aria-selected", "true");
+    await expect(page.locator(".journey-explanation")).toHaveCSS(
+      "opacity",
+      "1",
+    );
     expect(
       (await new AxeBuilder({ page }).withTags(["wcag2a", "wcag2aa"]).analyze())
         .violations,

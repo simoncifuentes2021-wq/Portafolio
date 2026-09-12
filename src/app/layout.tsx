@@ -11,6 +11,7 @@ import "./styles/projects.css";
 import "./styles/sections.css";
 import "./styles/responsive.css";
 import "./styles/experience.css";
+import "./styles/observatory.css";
 
 const display = localFont({
   src: "./fonts/fraunces-italic-latin.woff2",

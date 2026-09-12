@@ -11,6 +11,7 @@ export function useActiveSection() {
     if (pathname !== "/") return;
     const sections = [
       "inicio",
+      "observatorio",
       ...navLinks.map((link) => link.href.split("#")[1]),
     ];
     const observer = new IntersectionObserver(

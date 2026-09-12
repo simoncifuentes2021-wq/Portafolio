@@ -8,6 +8,7 @@ test("layout remains inside the viewport throughout the scroll", async ({
     await page.goto("/");
     for (const selector of [
       "#inicio",
+      "#observatorio",
       "#proyectos",
       "#sobre-mi",
       "#stack",
