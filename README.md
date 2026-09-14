@@ -76,3 +76,5 @@ Los estilos están separados en sistema global, proyectos, secciones, responsive
 Next.js utiliza `.next-dev` durante `npm run dev` y el directorio estándar `.next` para build y producción, compatible con Vercel. Esto evita mezclar los módulos de desarrollo y producción. Si necesitas ambos servidores simultáneamente, usa puertos distintos: `npm run dev -- --port 3001` y `npm run start -- --port 3000`. Next.js permanece en la rama 15; PostCSS se fija dentro de Next a una versión corregida compatible.
 
 Antes de volver a ejecutar `npm run build`, detén el servidor local iniciado con `npm run start`; después de compilar, inícialo nuevamente. El servidor de desarrollo puede permanecer activo gracias a su caché independiente. La prueba `tests/project-loading.spec.ts` comprueba navegación, recarga e hidratación de los tres casos.
+
+`public/sw.js` es un script de retiro: si el navegador conserva un service worker de una versión anterior, lo desregistra y deja de interceptar los módulos actuales de Next.js.

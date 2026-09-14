@@ -219,4 +219,5 @@ test("social image and crawl metadata are served", async ({ request }) => {
   expect(image.headers()["content-type"]).toContain("image/png");
   expect((await request.get("/robots.txt")).status()).toBe(200);
   expect((await request.get("/sitemap.xml")).status()).toBe(200);
+  expect((await request.get("/sw.js")).status()).toBe(200);
 });
